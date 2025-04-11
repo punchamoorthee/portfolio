@@ -3,9 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nanu Panchamurthy | Web Developer</title>
+    <title>Nanu Panchamurthy | Full Stack Web Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Nanu Panchamurthy, a Full Stack Web Developer specializing in the MERN stack, showcasing projects, skills, and experience."
+    />
+
     <link rel="stylesheet" href="styles.css" />
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,7 +17,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,65 +25,76 @@
     />
   </head>
   <body>
-    <!-- Navbar -->
-    <nav id="navbar">
-      <div class="container navbar-container">
-        <div class="logo">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav
+      id="navbar"
+      class="navbar"
+      role="navigation"
+      aria-label="Main Navigation"
+    >
+      <div class="container navbar__container">
+        <div class="navbar__logo">
           <a href="#home">nanu<span class="highlight">.</span></a>
         </div>
-        <ul class="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact" class="contact-btn">Contact</a></li>
+        <!-- Principle 7: Ensure ID matches aria-controls -->
+        <ul class="navbar__links" id="nav-links-list" role="list">
+          <li role="listitem"><a href="#home" class="active">Home</a></li>
+          <li role="listitem"><a href="#about">About</a></li>
+          <li role="listitem"><a href="#skills">Skills</a></li>
+          <li role="listitem"><a href="#projects">Projects</a></li>
+          <li role="listitem"><a href="#experience">Experience</a></li>
+          <li role="listitem"><a href="#education">Education</a></li>
+          <li role="listitem">
+            <a href="#contact" class="navbar__contact-btn">Contact</a>
+          </li>
         </ul>
         <button
-          class="hamburger-menu"
+          class="navbar__hamburger"
           aria-label="Toggle navigation menu"
           aria-expanded="false"
           aria-controls="nav-links-list"
         >
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
+          <span class="navbar__hamburger-bar"></span>
+          <span class="navbar__hamburger-bar"></span>
+          <span class="navbar__hamburger-bar"></span>
         </button>
       </div>
     </nav>
 
-    <!-- Main Content Wrapper -->
-    <main>
+    <main id="main-content">
       <!-- Hero Section -->
-      <section id="home" class="hero">
-        <div class="container hero-container">
-          <div class="hero-content">
-            <div class="hero-text">
-              <h1 class="animate-text">Full Stack Web Developer</h1>
-              <p>
+      <section id="home" class="hero section section--light">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <div class="hero__text">
+              <h1 class="hero__title animate-text">Full Stack Web Developer</h1>
+              <p class="hero__subtitle">
                 Passionate about building beautiful, functional interfaces and
-                robust backend systems that solve real-world problems.
+                robust backend systems that solve real-world problems. Based in
+                the Los Angeles area.
               </p>
-              <div class="hero-buttons">
-                <a href="#projects" class="primary-btn">View Projects</a>
-                <a href="#contact" class="secondary-btn">Get in Touch</a>
+              <div class="hero__buttons">
+                <a href="#projects" class="btn btn--primary">View Projects</a>
+                <a href="#contact" class="btn btn--secondary">Get in Touch</a>
               </div>
             </div>
-            <div class="hero-image">
-              <div class="image-container">
-                <div class="shape-1"></div>
-                <div class="shape-2"></div>
-                <div class="profile-img">
+            <div class="hero__image">
+              <div class="hero__image-container">
+                <div class="hero__image-shape hero__image-shape--1"></div>
+                <div class="hero__image-shape hero__image-shape--2"></div>
+                <div class="hero__image-profile">
                   <img
                     src="./assets/nanu.png"
-                    alt="Nanu Panchamurthy smiling"
+                    alt="Headshot of Nanu Panchamurthy smiling, wearing glasses."
+                    loading="eager"
                   />
                 </div>
               </div>
             </div>
           </div>
-          <div class="scroll-indicator">
+          <div class="hero__scroll-indicator" aria-hidden="true">
+            <!-- Hide from screen readers -->
             <span>Scroll Down</span>
             <i class="fas fa-chevron-down"></i>
           </div>
@@ -88,15 +102,16 @@
       </section>
 
       <!-- About Section -->
-      <section id="about" class="about">
-        <div class="container about-container">
+      <section id="about" class="about section section--dark">
+        <div class="container about__container">
           <div class="section-header">
-            <span class="section-subtitle">About Me</span>
-            <h2 class="section-title">Get to Know Me</h2>
+            <span class="section-header__subtitle">About Me</span>
+            <h2 class="section-header__title">Get to Know Me</h2>
           </div>
-          <div class="about-content">
-            <div class="about-text">
-              <p class="highlight-text">
+          <div class="about__content">
+            <div class="about__text">
+              <!-- Principle 4: Authentic introduction -->
+              <p class="about__highlight-text">
                 Hello! I'm Nanu, a MERN stack focused Web Developer with 2+
                 years of experience driving measurable business impact through
                 optimized digital solutions.
@@ -110,56 +125,59 @@
                 to efficient back-end architecture. I'm always eager to learn
                 new technologies and contribute to innovative projects.
               </p>
-              <div class="about-stats">
-                <div class="stat">
-                  <span class="stat-number">2+</span>
-                  <span class="stat-text">Years Experience</span>
+              <div class="about__stats">
+                <!-- Principle 3: Quantifiable achievements -->
+                <div class="about__stat">
+                  <span class="about__stat-number">2+</span>
+                  <span class="about__stat-text">Years Experience</span>
                 </div>
-                <div class="stat">
-                  <span class="stat-number">45%</span>
-                  <span class="stat-text">Avg. Conversion Uplift</span>
+                <div class="about__stat">
+                  <span class="about__stat-number">45%</span>
+                  <span class="about__stat-text">Avg. Conversion Uplift</span>
                 </div>
-                <div class="stat">
-                  <span class="stat-number">40%</span>
-                  <span class="stat-text">Mobile Engagement Boost</span>
+                <div class="about__stat">
+                  <span class="about__stat-number">40%</span>
+                  <span class="about__stat-text">Mobile Engagement Boost</span>
                 </div>
               </div>
               <a
                 href="./assets/resume.pdf"
-                class="primary-btn"
+                class="btn btn--primary"
                 download="nanu_p_resume.pdf"
-                >Download Resume</a
               >
+                <i class="fas fa-download" aria-hidden="true"></i> Download
+                Resume
+              </a>
             </div>
-            <div class="about-cards">
-              <div class="card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Web Development</h3>
-                <p>
+            <div class="about__cards">
+              <div class="card card--about animate-on-scroll">
+                <i class="fas fa-laptop-code card__icon" aria-hidden="true"></i>
+                <h3 class="card__title">Web Development</h3>
+                <p class="card__text">
                   Creating responsive, user-friendly websites and applications
                   focused on exceptional user experiences.
                 </p>
               </div>
-              <div class="card">
-                <i class="fas fa-server"></i>
-                <h3>Backend Solutions</h3>
-                <p>
+              <div class="card card--about animate-on-scroll">
+                <i class="fas fa-server card__icon" aria-hidden="true"></i>
+                <h3 class="card__title">Backend Solutions</h3>
+                <p class="card__text">
                   Building scalable and secure APIs and database architectures
                   to power dynamic applications.
                 </p>
               </div>
-              <div class="card">
-                <i class="fas fa-paint-brush"></i>
-                <h3>UI/UX Design</h3>
-                <p>
+              <div class="card card--about animate-on-scroll">
+                <i class="fas fa-paint-brush card__icon" aria-hidden="true"></i>
+                <h3 class="card__title">UI/UX Design</h3>
+                <p class="card__text">
                   Designing intuitive and visually appealing interfaces that
                   effectively balance aesthetics and functionality.
                 </p>
               </div>
-              <div class="card">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Responsive Design</h3>
-                <p>
+              <div class="card card--about animate-on-scroll">
+                <i class="fas fa-mobile-alt card__icon" aria-hidden="true"></i>
+                <h3 class="card__title">Responsive Design</h3>
+                <p class="card__text">
                   Ensuring seamless and consistent experiences across all
                   devices, from desktops to mobile phones.
                 </p>
@@ -170,68 +188,94 @@
       </section>
 
       <!-- Skills Section -->
-      <section id="skills" class="skills">
-        <div class="container skills-container">
+      <section id="skills" class="skills section section--light">
+        <div class="container skills__container">
           <div class="section-header">
-            <span class="section-subtitle">My Skills</span>
-            <h2 class="section-title">Technical Expertise</h2>
+            <span class="section-header__subtitle">My Skills</span>
+            <h2 class="section-header__title">Technical Expertise</h2>
           </div>
-          <div class="skills-content">
-            <div class="skills-category">
-              <h3>Frontend & Design</h3>
-              <div class="skills-grid">
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fab fa-js"></i></div>
-                  <span>JavaScript</span>
+          <div class="skills__content">
+            <div class="skills__category">
+              <h3 class="skills__category-title">Frontend & Design</h3>
+              <div class="skills__grid" role="list">
+                <!-- Added role -->
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fab fa-js" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">JavaScript</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fab fa-react"></i></div>
-                  <span>React.js</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fab fa-react" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">React.js</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                  <span>HTML5</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fab fa-html5" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">HTML5</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-                  <span>CSS3</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fab fa-css3-alt" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">CSS3</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fab fa-figma"></i></div>
-                  <span>Figma</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fab fa-figma" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">Figma</span>
                 </div>
               </div>
             </div>
-            <div class="skills-category">
-              <h3>Backend & Database</h3>
-              <div class="skills-grid">
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fab fa-node-js"></i></div>
-                  <span>Node.js</span>
+            <div class="skills__category">
+              <h3 class="skills__category-title">Backend & Database</h3>
+              <div class="skills__grid" role="list">
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fab fa-node-js" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">Node.js</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fas fa-bolt"></i></div>
-                  <span>Express.js</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">Express.js</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fab fa-python"></i></div>
-                  <span>Python</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fab fa-python" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">Python</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fab fa-java"></i></div>
-                  <span>Java</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fab fa-java" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">Java</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fas fa-database"></i></div>
-                  <span>MySQL</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fas fa-database" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">MySQL</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fas fa-leaf"></i></div>
-                  <span>MongoDB</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <!-- Better generic icon or find specific one -->
+                  <div class="skill-item__icon">
+                    <i class="fas fa-leaf" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">MongoDB</span>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                  <span>Git</span>
+                <div class="skill-item animate-on-scroll" role="listitem">
+                  <div class="skill-item__icon">
+                    <i class="fab fa-git-alt" aria-hidden="true"></i>
+                  </div>
+                  <span class="skill-item__name">Git</span>
                 </div>
               </div>
             </div>
@@ -240,96 +284,137 @@
       </section>
 
       <!-- Projects Section -->
-      <section id="projects" class="projects">
-        <div class="container projects-container">
+      <section id="projects" class="projects section section--dark">
+        <div class="container projects__container">
           <div class="section-header">
-            <span class="section-subtitle">My Work</span>
-            <h2 class="section-title">Featured Projects</h2>
+            <span class="section-header__subtitle">My Work</span>
+            <h2 class="section-header__title">Featured Projects</h2>
           </div>
-          <div class="projects-grid">
+          <div class="projects__grid">
             <!-- Project 1 -->
-            <div class="project-card">
-              <div class="project-img">
+            <div class="project-card animate-on-scroll">
+              <div class="project-card__img">
                 <img
-                  src="https://via.placeholder.com/500x300/ff7143/ffffff?text=Posterati"
-                  alt="Screenshot of Posterati Project"
+                  src="./assets/posterati.png"
+                  alt="Screenshot of the Posterati movie poster sharing application interface."
                   loading="lazy"
                 />
+                <!-- Principle 8: Lazy load -->
               </div>
-              <div class="project-content">
-                <h3>Posterati</h3>
-                <p>
-                  A dynamic movie/TV poster sharing platform built with the MERN
-                  stack. Features JWT authentication, user profiles, and a
-                  responsive design for community interaction. Key challenge:
-                  Implementing secure user sessions.
+              <div class="project-card__content">
+                <h3 class="project-card__title">Posterati</h3>
+                <p class="project-card__description">
+                  <strong>Goal:</strong> Create a community platform for
+                  movie/TV fans to share and discuss posters. <br />
+                  <strong>Solution:</strong> A dynamic MERN stack application
+                  featuring JWT authentication, user profiles, poster uploads,
+                  and commenting. <br />
+                  <strong>My Role:</strong> Full stack development, focusing on
+                  API design and secure user session implementation.
                 </p>
-                <div class="project-tags">
-                  <span>MongoDB</span>
-                  <span>Express</span>
-                  <span>React</span>
-                  <span>Node.js</span>
-                  <span>JWT</span>
+                <div class="project-card__tags" role="list">
+                  <span role="listitem">MongoDB</span>
+                  <span role="listitem">Express</span>
+                  <span role="listitem">React</span>
+                  <span role="listitem">Node.js</span>
+                  <span role="listitem">JWT</span>
+                </div>
+                <div class="project-card__links">
+                  <a
+                    href="https://posterati-frontend.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    ><i class="fas fa-external-link-alt"></i> Live Demo</a
+                  >
+                  <a
+                    href="https://github.com/punchamoorthee/MyPoster"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    ><i class="fab fa-github"></i> View Code</a
+                  >
                 </div>
               </div>
             </div>
             <!-- Project 2 -->
-            <div class="project-card">
-              <div class="project-img">
+            <div class="project-card animate-on-scroll">
+              <div class="project-card__img">
                 <img
-                  src="https://via.placeholder.com/500x300/ff7143/ffffff?text=PlatePal"
-                  alt="Screenshot of PlatePal Project"
+                  src="./assets/platepal.png"
+                  alt="Screenshot of the PlatePal food ordering app on a mobile display."
                   loading="lazy"
                 />
               </div>
-              <div class="project-content">
-                <h3>PlatePal</h3>
-                <p>
-                  A real-time food ordering application using React and
-                  Firebase. Leverages Firebase's real-time database for instant
-                  order updates and status tracking. Built with a mobile-first
-                  approach. Outcome: Seamless ordering experience.
+              <div class="project-card__content">
+                <h3 class="project-card__title">PlatePal</h3>
+                <p class="project-card__description">
+                  <strong>Goal:</strong> Develop a seamless, real-time food
+                  ordering experience. <br />
+                  <strong>Solution:</strong> A mobile-first React application
+                  utilizing Firebase Realtime Database for instant order updates
+                  and status tracking. <br />
+                  <strong>My Role:</strong> Frontend development and Firebase
+                  integration.
                 </p>
-                <div class="project-tags">
-                  <span>React</span>
-                  <span>Firebase RTDB</span>
-                  <span>CSS</span>
-                  <span>Mobile-first</span>
+                <div class="project-card__tags" role="list">
+                  <span role="listitem">React</span>
+                  <span role="listitem">Firebase RTDB</span>
+                  <span role="listitem">CSS</span>
+                  <span role="listitem">Mobile-first</span>
+                </div>
+                <div class="project-card__links">
+                  <a
+                    href="https://punchamoorthee.github.io/FoodOrderApp/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    ><i class="fas fa-external-link-alt"></i> Live Demo</a
+                  >
+                  <a
+                    href="https://github.com/punchamoorthee/FoodOrderApp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    ><i class="fab fa-github"></i> View Code</a
+                  >
                 </div>
               </div>
             </div>
             <!-- Project 3 -->
-            <div class="project-card">
-              <div class="project-img">
+            <div class="project-card animate-on-scroll">
+              <div class="project-card__img">
                 <img
-                  src="https://via.placeholder.com/500x300/ff7143/ffffff?text=E-commerce+Redesign"
-                  alt="Screenshot of E-commerce Redesign Project"
+                  src="./assets/ecommerce.webp"
+                  alt="Before and after comparison of an e-commerce website redesign."
                   loading="lazy"
                 />
               </div>
-              <div class="project-content">
-                <h3>E-commerce UI/UX Redesign</h3>
-                <p>
-                  Led the front-end redesign for a client's e-commerce site,
-                  implementing a responsive UI/UX with React.js and modern CSS.
-                  Resulted in a 45% increase in conversion rate due to improved
-                  navigation and checkout flow.
+              <div class="project-card__content">
+                <h3 class="project-card__title">E-commerce UI/UX Redesign</h3>
+                <p class="project-card__description">
+                  <strong>Goal:</strong> Improve conversion rate for a client's
+                  e-commerce site through a front-end overhaul. <br />
+                  <strong>Solution:</strong> Implemented a responsive, modern
+                  UI/UX using React and advanced CSS, focusing on intuitive
+                  navigation and checkout flow. <br />
+                  <strong>Outcome:</strong> Achieved a 45% increase in
+                  conversion rate post-launch.
                 </p>
-                <div class="project-tags">
-                  <span>React</span>
-                  <span>CSS Grid/Flex</span>
-                  <span>UI/UX</span>
-                  <span>Optimization</span>
+                <div class="project-card__tags" role="list">
+                  <span role="listitem">React</span>
+                  <span role="listitem">CSS</span>
+                  <span role="listitem">UI/UX</span>
+                  <span role="listitem">Optimization</span>
                 </div>
               </div>
             </div>
-            <!-- Add more project cards as needed -->
           </div>
-          <div class="view-more">
-            <!-- Link to a separate projects page or GitHub profile -->
+          <div class="projects__view-more">
+            <!-- Principle 11: Link to more work -->
             <a
               href="https://github.com/punchamoorthee?tab=repositories"
-              class="secondary-btn"
+              class="btn btn--secondary"
               target="_blank"
               rel="noopener noreferrer"
               >View All Projects <i class="fas fa-arrow-right"></i
@@ -339,40 +424,40 @@
       </section>
 
       <!-- Experience Timeline -->
-      <section id="experience" class="experience">
-        <div class="container experience-container">
+      <section id="experience" class="experience section section--light">
+        <div class="container experience__container">
           <div class="section-header">
-            <span class="section-subtitle">My Journey</span>
-            <h2 class="section-title">Work Experience</h2>
+            <span class="section-header__subtitle">My Journey</span>
+            <h2 class="section-header__title">Work Experience</h2>
           </div>
           <div class="timeline">
             <!-- Timeline Item 1 -->
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">
-                <span>Aug 2022 - Mar 2024</span>
-              </div>
-              <div class="timeline-content">
-                <h3>Full Stack Web Developer</h3>
-                <h4>
+            <div class="timeline__item">
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__date">Aug 2022 - Mar 2024</div>
+              <div class="timeline__content animate-on-scroll">
+                <h3 class="timeline__title">Full Stack Web Developer</h3>
+                <h4 class="timeline__company">
                   Freelance
-                  <span class="location">| Remote (Based in India)</span>
+                  <span class="timeline__location"
+                    >| Remote (Based in India)</span
+                  >
                 </h4>
-                <ul>
-                  <li>
+                <ul class="timeline__details" role="list">
+                  <li role="listitem">
                     Designed and developed responsive front-end interfaces using
                     React, leading to a 45% average increase in client
                     e-commerce conversion rates.
                   </li>
-                  <li>
+                  <li role="listitem">
                     Developed Python scripts to automate data entry tasks,
                     saving clients an average of 20 hours per week.
                   </li>
-                  <li>
+                  <li role="listitem">
                     Refactored legacy jQuery codebases to modern React
                     components, boosting mobile user engagement by up to 40%.
                   </li>
-                  <li>
+                  <li role="listitem">
                     Managed full project lifecycles from requirement gathering
                     to deployment for various clients.
                   </li>
@@ -380,77 +465,87 @@
               </div>
             </div>
             <!-- Timeline Item 2 -->
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">
-                <span>Jan 2022 - Jul 2022</span>
-              </div>
-              <div class="timeline-content">
-                <h3>System Engineer</h3>
-                <h4>Infosys <span class="location">| Chennai, India</span></h4>
-                <ul>
-                  <li>
+            <div class="timeline__item">
+              <div class="timeline__dot" aria-hidden="true"></div>
+              <div class="timeline__date">Jan 2022 - Jul 2022</div>
+              <div class="timeline__content animate-on-scroll">
+                <h3 class="timeline__title">System Engineer</h3>
+                <h4 class="timeline__company">
+                  Infosys
+                  <span class="timeline__location">| Chennai, India</span>
+                </h4>
+                <ul class="timeline__details" role="list">
+                  <li role="listitem">
                     Optimized SQL queries for product inventory systems,
                     achieving 10% faster average response times.
                   </li>
-                  <li>
+                  <li role="listitem">
                     Improved API reliability by implementing robust exception
                     handling, decreasing failed calls by 25%.
                   </li>
-                  <li>
+                  <li role="listitem">
                     Collaborated within agile teams on software development and
                     maintenance tasks for enterprise clients.
                   </li>
-                  <li>
+                  <li role="listitem">
                     Gained experience in large-scale system architecture and
                     backend processes.
                   </li>
                 </ul>
               </div>
             </div>
-            <!-- Add more timeline items if needed -->
           </div>
         </div>
       </section>
 
       <!-- Education Section -->
-      <section id="education" class="education">
-        <div class="container education-container">
+      <section id="education" class="education section section--dark">
+        <div class="container education__container">
           <div class="section-header">
-            <span class="section-subtitle">My Education</span>
-            <h2 class="section-title">Academic Background</h2>
+            <span class="section-header__subtitle">My Education</span>
+            <h2 class="section-header__title">Academic Background</h2>
           </div>
-          <div class="education-cards">
+          <div class="education__cards">
             <!-- Education Card 1 -->
-            <div class="education-card">
-              <div class="edu-icon">
-                <i class="fas fa-graduation-cap"></i>
+            <div class="education-card animate-on-scroll">
+              <div class="education-card__icon">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
               </div>
-              <div class="edu-content">
-                <h3>Master of Science in Computer Science</h3>
-                <h4>California State University Dominguez Hills</h4>
-                <p class="edu-year">Aug 2024 - May 2026 (Expected)</p>
-                <p class="edu-gpa">Current GPA: 4.0/4.0</p>
-                <p>
-                  <strong>Relevant Coursework:</strong> Data Structures and
+              <div class="education-card__content">
+                <h3 class="education-card__degree">
+                  Master of Science in Computer Science
+                </h3>
+                <h4 class="education-card__institution">
+                  California State University Dominguez Hills
+                </h4>
+                <p class="education-card__year">
+                  Aug 2024 - May 2026 (Expected)
+                </p>
+                <p class="education-card__detail">Current GPA: 4.0/4.0</p>
+                <p class="education-card__courses">
+                  <strong>Relevant Coursework:</strong> Data Structures &
                   Algorithms, Database Management Systems, Operating Systems,
                   Software Engineering
                 </p>
               </div>
             </div>
             <!-- Education Card 2 -->
-            <div class="education-card">
-              <div class="edu-icon">
-                <i class="fas fa-university"></i>
+            <div class="education-card animate-on-scroll">
+              <div class="education-card__icon">
+                <i class="fas fa-university" aria-hidden="true"></i>
               </div>
-              <div class="edu-content">
-                <h3>Bachelor of Technology in Mechanical Engineering</h3>
-                <h4>Andhra University, Visakhapatnam, India</h4>
-                <p class="edu-year">Graduated Jun 2020</p>
-                <!-- Optional: Add GPA or relevant projects/thesis if desired -->
-                <p>
+              <div class="education-card__content">
+                <h3 class="education-card__degree">
+                  Bachelor of Technology in Mechanical Engineering
+                </h3>
+                <h4 class="education-card__institution">
+                  Andhra University, Visakhapatnam, India
+                </h4>
+                <p class="education-card__year">Graduated Jun 2020</p>
+                <p class="education-card__detail">
                   Developed a strong foundation in analytical thinking and
-                  problem-solving.
+                  problem-solving, now applied to software development
+                  challenges.
                 </p>
               </div>
             </div>
@@ -459,85 +554,150 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="contact">
-        <div class="container contact-container">
+      <!-- Principle 11: Clear Contact/CTA -->
+      <section id="contact" class="contact section section--light">
+        <div class="container contact__container">
           <div class="section-header">
-            <span class="section-subtitle">Get In Touch</span>
-            <h2 class="section-title">Let's Connect</h2>
+            <span class="section-header__subtitle">Get In Touch</span>
+            <h2 class="section-header__title">Let's Connect</h2>
           </div>
-          <div class="contact-content">
-            <div class="contact-info">
-              <h3>Contact Information</h3>
-              <p>
+          <div class="contact__content">
+            <div class="contact__info">
+              <h3 class="contact__info-title">Contact Information</h3>
+              <p class="contact__info-text">
                 I'm currently seeking new opportunities and collaborations. Feel
-                free to reach out via email, phone, or social media!
+                free to reach out via email, phone, or find me online!
               </p>
-              <div class="contact-details">
-                <div class="contact-item">
-                  <i class="fas fa-envelope"></i>
+              <div class="contact__details">
+                <div class="contact__item">
+                  <i
+                    class="fas fa-envelope contact__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <a href="mailto:punchamoorthee@gmail.com"
                     >punchamoorthee@gmail.com</a
                   >
                 </div>
-                <div class="contact-item">
-                  <i class="fas fa-phone"></i>
+                <div class="contact__item">
+                  <i
+                    class="fas fa-phone contact__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <a href="tel:+15629662478">(562) 966-2478</a>
                 </div>
-                <div class="contact-item">
-                  <i class="fas fa-map-marker-alt"></i>
+                <div class="contact__item">
+                  <i
+                    class="fas fa-map-marker-alt contact__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <span>Los Angeles, CA Area</span>
                 </div>
               </div>
-              <div class="social-links">
+              <div class="contact__social-links" role="list">
                 <a
                   href="https://linkedin.com/in/punchamoorthee"
-                  class="social-link"
+                  class="contact__social-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn Profile"
-                  ><i class="fab fa-linkedin"></i
+                  aria-label="LinkedIn Profile (opens in new tab)"
+                  role="listitem"
+                  ><i class="fab fa-linkedin" aria-hidden="true"></i
                 ></a>
                 <a
                   href="https://github.com/punchamoorthee"
-                  class="social-link"
+                  class="contact__social-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="GitHub Profile"
-                  ><i class="fab fa-github"></i
+                  aria-label="GitHub Profile (opens in new tab)"
+                  role="listitem"
+                  ><i class="fab fa-github" aria-hidden="true"></i
                 ></a>
+                <!-- Add other relevant social links -->
               </div>
             </div>
-            <div class="contact-form">
-              <!-- For a real form, you'd need backend code or a service like Formspree/Netlify Forms -->
+            <div class="contact__form-container">
+              <!-- Principle 9: Using a service like Formspree is appropriate tech -->
               <form
                 id="contactForm"
+                class="contact__form"
                 action="https://formspree.io/f/meoavbdj"
                 method="POST"
+                novalidate
               >
+                <!-- Add novalidate to rely on JS/backend validation -->
                 <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" name="name" required />
+                  <label for="name" class="form-group__label">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-group__input"
+                    required
+                    aria-required="true"
+                  />
+                  <span
+                    class="form-group__error-message"
+                    aria-live="polite"
+                  ></span>
+                  <!-- For JS validation messages -->
                 </div>
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" required />
+                  <label for="email" class="form-group__label">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-group__input"
+                    required
+                    aria-required="true"
+                  />
+                  <span
+                    class="form-group__error-message"
+                    aria-live="polite"
+                  ></span>
                 </div>
                 <div class="form-group">
-                  <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" required />
+                  <label for="subject" class="form-group__label">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="form-group__input"
+                    required
+                    aria-required="true"
+                  />
+                  <span
+                    class="form-group__error-message"
+                    aria-live="polite"
+                  ></span>
                 </div>
                 <div class="form-group">
-                  <label for="message">Message</label>
+                  <label for="message" class="form-group__label">Message</label>
                   <textarea
                     id="message"
                     name="message"
                     rows="5"
+                    class="form-group__textarea"
                     required
+                    aria-required="true"
                   ></textarea>
+                  <span
+                    class="form-group__error-message"
+                    aria-live="polite"
+                  ></span>
                 </div>
-                <button type="submit" class="primary-btn">Send Message</button>
-                <p id="form-status" class="form-status-message"></p>
-                <!-- Status message area -->
+                <button
+                  type="submit"
+                  class="btn btn--primary contact__submit-btn"
+                >
+                  Send Message
+                </button>
+                <!-- Principle 7: Status message with aria-live -->
+                <p
+                  id="form-status"
+                  class="contact__form-status"
+                  aria-live="assertive"
+                ></p>
               </form>
             </div>
           </div>
@@ -546,37 +706,38 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer-container">
-        <div class="footer-top">
-          <div class="footer-logo">
+    <footer class="footer section--dark">
+      <div class="container footer__container">
+        <div class="footer__top">
+          <div class="footer__logo">
             <a href="#home">nanu<span class="highlight">.</span></a>
           </div>
-          <div class="footer-nav">
-            <ul id="nav-links-list">
-              <!-- Added ID for aria-controls -->
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#education">Education</a></li>
-              <li><a href="#contact">Contact</a></li>
+          <nav class="footer__nav" aria-label="Footer Navigation">
+            <ul role="list">
+              <li role="listitem"><a href="#home">Home</a></li>
+              <li role="listitem"><a href="#about">About</a></li>
+              <li role="listitem"><a href="#skills">Skills</a></li>
+              <li role="listitem"><a href="#projects">Projects</a></li>
+              <li role="listitem"><a href="#experience">Experience</a></li>
+              <li role="listitem"><a href="#education">Education</a></li>
+              <li role="listitem"><a href="#contact">Contact</a></li>
             </ul>
-          </div>
+          </nav>
         </div>
-        <div class="footer-bottom">
+        <div class="footer__bottom">
+          <!-- Principle 12: Acknowledge it's a living document -->
           <p>
             © <span id="copyright-year"></span> Nanu Panchamurthy. All rights
-            reserved.
+            reserved. | Portfolio continuously updated.
           </p>
-          <a href="#home" class="back-to-top" aria-label="Back to top">
-            <i class="fas fa-arrow-up"></i>
+          <a href="#home" class="footer__back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
           </a>
         </div>
       </div>
     </footer>
 
+    <!-- Principle 8: Place script at the end -->
     <script src="script.js"></script>
   </body>
 </html>
