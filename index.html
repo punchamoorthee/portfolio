@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nanu Panchamurthy | Web Developer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="container navbar-container">
+        <div class="logo">
+          <a href="#home">nanu<span class="highlight">.</span></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact" class="contact-btn">Contact</a></li>
+        </ul>
+        <button
+          class="hamburger-menu"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-links-list"
+        >
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="animate-text">Full Stack Web Developer</h1>
+              <p>
+                Passionate about building beautiful, functional interfaces and
+                robust backend systems that solve real-world problems.
+              </p>
+              <div class="hero-buttons">
+                <a href="#projects" class="primary-btn">View Projects</a>
+                <a href="#contact" class="secondary-btn">Get in Touch</a>
+              </div>
+            </div>
+            <div class="hero-image">
+              <div class="image-container">
+                <div class="shape-1"></div>
+                <div class="shape-2"></div>
+                <div class="profile-img">
+                  <img
+                    src="./assets/nanu.png"
+                    alt="Nanu Panchamurthy smiling"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="container about-container">
+          <div class="section-header">
+            <span class="section-subtitle">About Me</span>
+            <h2 class="section-title">Get to Know Me</h2>
+          </div>
+          <div class="about-content">
+            <div class="about-text">
+              <p class="highlight-text">
+                Hello! I'm Nanu, a MERN stack focused Web Developer with 2+
+                years of experience driving measurable business impact through
+                optimized digital solutions.
+              </p>
+              <p>
+                Currently enhancing my skills with an MS in Computer Science at
+                California State University Dominguez Hills, I thrive on
+                applying systems-thinking and creative problem-solving to
+                deliver high-quality, impactful results. My expertise spans the
+                full development lifecycle, from intuitive front-end interfaces
+                to efficient back-end architecture. I'm always eager to learn
+                new technologies and contribute to innovative projects.
+              </p>
+              <div class="about-stats">
+                <div class="stat">
+                  <span class="stat-number">2+</span>
+                  <span class="stat-text">Years Experience</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">45%</span>
+                  <span class="stat-text">Avg. Conversion Uplift</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">40%</span>
+                  <span class="stat-text">Mobile Engagement Boost</span>
+                </div>
+              </div>
+              <a
+                href="./assets/resume.pdf"
+                class="primary-btn"
+                download="nanu_p_resume.pdf"
+                >Download Resume</a
+              >
+            </div>
+            <div class="about-cards">
+              <div class="card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>
+                  Creating responsive, user-friendly websites and applications
+                  focused on exceptional user experiences.
+                </p>
+              </div>
+              <div class="card">
+                <i class="fas fa-server"></i>
+                <h3>Backend Solutions</h3>
+                <p>
+                  Building scalable and secure APIs and database architectures
+                  to power dynamic applications.
+                </p>
+              </div>
+              <div class="card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>
+                  Designing intuitive and visually appealing interfaces that
+                  effectively balance aesthetics and functionality.
+                </p>
+              </div>
+              <div class="card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive Design</h3>
+                <p>
+                  Ensuring seamless and consistent experiences across all
+                  devices, from desktops to mobile phones.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="skills">
+        <div class="container skills-container">
+          <div class="section-header">
+            <span class="section-subtitle">My Skills</span>
+            <h2 class="section-title">Technical Expertise</h2>
+          </div>
+          <div class="skills-content">
+            <div class="skills-category">
+              <h3>Frontend & Design</h3>
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-js"></i></div>
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-react"></i></div>
+                  <span>React.js</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                  <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                  <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-figma"></i></div>
+                  <span>Figma</span>
+                </div>
+              </div>
+            </div>
+            <div class="skills-category">
+              <h3>Backend & Database</h3>
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                  <span>Node.js</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fas fa-bolt"></i></div>
+                  <span>Express.js</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-python"></i></div>
+                  <span>Python</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-java"></i></div>
+                  <span>Java</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fas fa-database"></i></div>
+                  <span>MySQL</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fas fa-leaf"></i></div>
+                  <span>MongoDB</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                  <span>Git</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects">
+        <div class="container projects-container">
+          <div class="section-header">
+            <span class="section-subtitle">My Work</span>
+            <h2 class="section-title">Featured Projects</h2>
+          </div>
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+              <div class="project-img">
+                <img
+                  src="https://via.placeholder.com/500x300/ff7143/ffffff?text=Posterati"
+                  alt="Screenshot of Posterati Project"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-content">
+                <h3>Posterati</h3>
+                <p>
+                  A dynamic movie/TV poster sharing platform built with the MERN
+                  stack. Features JWT authentication, user profiles, and a
+                  responsive design for community interaction. Key challenge:
+                  Implementing secure user sessions.
+                </p>
+                <div class="project-tags">
+                  <span>MongoDB</span>
+                  <span>Express</span>
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>JWT</span>
+                </div>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+              <div class="project-img">
+                <img
+                  src="https://via.placeholder.com/500x300/ff7143/ffffff?text=PlatePal"
+                  alt="Screenshot of PlatePal Project"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-content">
+                <h3>PlatePal</h3>
+                <p>
+                  A real-time food ordering application using React and
+                  Firebase. Leverages Firebase's real-time database for instant
+                  order updates and status tracking. Built with a mobile-first
+                  approach. Outcome: Seamless ordering experience.
+                </p>
+                <div class="project-tags">
+                  <span>React</span>
+                  <span>Firebase RTDB</span>
+                  <span>CSS</span>
+                  <span>Mobile-first</span>
+                </div>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+              <div class="project-img">
+                <img
+                  src="https://via.placeholder.com/500x300/ff7143/ffffff?text=E-commerce+Redesign"
+                  alt="Screenshot of E-commerce Redesign Project"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-content">
+                <h3>E-commerce UI/UX Redesign</h3>
+                <p>
+                  Led the front-end redesign for a client's e-commerce site,
+                  implementing a responsive UI/UX with React.js and modern CSS.
+                  Resulted in a 45% increase in conversion rate due to improved
+                  navigation and checkout flow.
+                </p>
+                <div class="project-tags">
+                  <span>React</span>
+                  <span>CSS Grid/Flex</span>
+                  <span>UI/UX</span>
+                  <span>Optimization</span>
+                </div>
+              </div>
+            </div>
+            <!-- Add more project cards as needed -->
+          </div>
+          <div class="view-more">
+            <!-- Link to a separate projects page or GitHub profile -->
+            <a
+              href="https://github.com/punchamoorthee?tab=repositories"
+              class="secondary-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View All Projects <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Timeline -->
+      <section id="experience" class="experience">
+        <div class="container experience-container">
+          <div class="section-header">
+            <span class="section-subtitle">My Journey</span>
+            <h2 class="section-title">Work Experience</h2>
+          </div>
+          <div class="timeline">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">
+                <span>Aug 2022 - Mar 2024</span>
+              </div>
+              <div class="timeline-content">
+                <h3>Full Stack Web Developer</h3>
+                <h4>
+                  Freelance
+                  <span class="location">| Remote (Based in India)</span>
+                </h4>
+                <ul>
+                  <li>
+                    Designed and developed responsive front-end interfaces using
+                    React, leading to a 45% average increase in client
+                    e-commerce conversion rates.
+                  </li>
+                  <li>
+                    Developed Python scripts to automate data entry tasks,
+                    saving clients an average of 20 hours per week.
+                  </li>
+                  <li>
+                    Refactored legacy jQuery codebases to modern React
+                    components, boosting mobile user engagement by up to 40%.
+                  </li>
+                  <li>
+                    Managed full project lifecycles from requirement gathering
+                    to deployment for various clients.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">
+                <span>Jan 2022 - Jul 2022</span>
+              </div>
+              <div class="timeline-content">
+                <h3>System Engineer</h3>
+                <h4>Infosys <span class="location">| Chennai, India</span></h4>
+                <ul>
+                  <li>
+                    Optimized SQL queries for product inventory systems,
+                    achieving 10% faster average response times.
+                  </li>
+                  <li>
+                    Improved API reliability by implementing robust exception
+                    handling, decreasing failed calls by 25%.
+                  </li>
+                  <li>
+                    Collaborated within agile teams on software development and
+                    maintenance tasks for enterprise clients.
+                  </li>
+                  <li>
+                    Gained experience in large-scale system architecture and
+                    backend processes.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Add more timeline items if needed -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="education">
+        <div class="container education-container">
+          <div class="section-header">
+            <span class="section-subtitle">My Education</span>
+            <h2 class="section-title">Academic Background</h2>
+          </div>
+          <div class="education-cards">
+            <!-- Education Card 1 -->
+            <div class="education-card">
+              <div class="edu-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="edu-content">
+                <h3>Master of Science in Computer Science</h3>
+                <h4>California State University Dominguez Hills</h4>
+                <p class="edu-year">Aug 2024 - May 2026 (Expected)</p>
+                <p class="edu-gpa">Current GPA: 4.0/4.0</p>
+                <p>
+                  <strong>Relevant Coursework:</strong> Data Structures and
+                  Algorithms, Database Management Systems, Operating Systems,
+                  Software Engineering
+                </p>
+              </div>
+            </div>
+            <!-- Education Card 2 -->
+            <div class="education-card">
+              <div class="edu-icon">
+                <i class="fas fa-university"></i>
+              </div>
+              <div class="edu-content">
+                <h3>Bachelor of Technology in Mechanical Engineering</h3>
+                <h4>Andhra University, Visakhapatnam, India</h4>
+                <p class="edu-year">Graduated Jun 2020</p>
+                <!-- Optional: Add GPA or relevant projects/thesis if desired -->
+                <p>
+                  Developed a strong foundation in analytical thinking and
+                  problem-solving.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container contact-container">
+          <div class="section-header">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 class="section-title">Let's Connect</h2>
+          </div>
+          <div class="contact-content">
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+              <p>
+                I'm currently seeking new opportunities and collaborations. Feel
+                free to reach out via email, phone, or social media!
+              </p>
+              <div class="contact-details">
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:punchamoorthee@gmail.com"
+                    >punchamoorthee@gmail.com</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:+15629662478">(562) 966-2478</a>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Los Angeles, CA Area</span>
+                </div>
+              </div>
+              <div class="social-links">
+                <a
+                  href="https://linkedin.com/in/punchamoorthee"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://github.com/punchamoorthee"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <div class="contact-form">
+              <!-- For a real form, you'd need backend code or a service like Formspree/Netlify Forms -->
+              <form
+                id="contactForm"
+                action="https://formspree.io/f/meoavbdj"
+                method="POST"
+              >
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" required />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="primary-btn">Send Message</button>
+                <p id="form-status" class="form-status-message"></p>
+                <!-- Status message area -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <a href="#home">nanu<span class="highlight">.</span></a>
+          </div>
+          <div class="footer-nav">
+            <ul id="nav-links-list">
+              <!-- Added ID for aria-controls -->
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © <span id="copyright-year"></span> Nanu Panchamurthy. All rights
+            reserved.
+          </p>
+          <a href="#home" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
