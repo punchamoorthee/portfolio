@@ -6,7 +6,7 @@
   --dark-light: #1e2222; /* Card background on dark */
   --dark-text: #333;
   --light-text: #f0f0f0;
-  --light-text-muted: #c7c5b9; /* Was cream-dark, more descriptive */
+  --light-text-muted: #c7c5b9;
   --orange-light: #ff8a61;
   --gray-light: #f8f9fa;
   --gray: #ced4da;
@@ -61,10 +61,9 @@ html {
 body {
   font-family: var(--font-family-main);
   line-height: 1.7;
-  color: var(--dark-text); /* Default text color */
-  background-color: var(--cream); /* Default background */
+  color: var(--dark-text);
+  background-color: var(--cream);
   overflow-x: hidden;
-  /* Principle 7: Improve text rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -72,7 +71,6 @@ body {
 img,
 video,
 svg {
-  /* Include video/svg */
   max-width: 100%;
   height: auto;
   display: block;
@@ -84,23 +82,20 @@ a {
   transition: var(--transition-medium);
 }
 a:hover {
-  color: var(--orange); /* Generic hover color */
+  color: var(--orange);
 }
 
 ul,
 ol {
-  /* Include ordered lists */
   list-style: none;
 }
 
-/* Using :where to reduce specificity */
 :where(a, button, input, textarea, select):focus-visible {
   outline: 3px solid var(--orange-light);
   outline-offset: 3px;
   box-shadow: 0 0 0 4px var(--focus-ring-color);
   border-radius: var(--border-radius-sm);
 }
-/* Remove default outline only when :focus-visible is supported and NOT used */
 :where(a, button, input, textarea, select):focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -109,17 +104,22 @@ ol {
 /* Skip Link (Accessibility) */
 .skip-link {
   position: absolute;
-  top: -40px; /* Hide off-screen */
+  top: -50px; /* Adjusted for potentially larger padding on focus */
   left: 0;
   background: var(--dark);
-  color: white;
-  padding: 8px;
-  z-index: 1100; /* Above navbar */
+  color: var(--white);
+  padding: var(--spacing-xs); /* 8px */
+  z-index: 1100;
   transition: top 0.3s ease-in-out;
+  border-radius: 0 0 var(--border-radius-sm) 0;
 }
 .skip-link:focus {
-  top: 0; /* Show on focus */
-  outline: none; /* Remove default focus, use its own style */
+  top: 0;
+  /* --- IMPROVED FOCUS STYLE --- */
+  outline: 3px solid var(--orange);
+  background-color: var(--dark-text);
+  color: var(--cream);
+  padding: var(--spacing-sm); /* Increased padding */
 }
 
 /* Utilities */
@@ -128,14 +128,14 @@ ol {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--spacing-sm); /* Use consistent spacing */
+  padding-left: var(--spacing-sm);
   padding-right: var(--spacing-sm);
 }
 
 .section {
   padding-top: var(--spacing-xl);
   padding-bottom: var(--spacing-xl);
-  position: relative; /* For potential pseudo-elements */
+  position: relative;
 }
 
 .section--light {
@@ -146,14 +146,13 @@ ol {
   background-color: var(--dark);
   color: var(--light-text);
 }
-/* Adjust default text/heading colors based on theme */
 .section--dark p,
 .section--dark li,
 .section--dark
   span:not(.highlight):not(.btn):not(.navbar__links a):not(
     .section-header__subtitle
-  ) {
-  color: var(--light-text-muted); /* Default muted text in dark sections */
+  ):not(.project-card__tags span) { /* Added project-card__tags span exclusion if it's not themed separately */
+  color: var(--light-text-muted);
 }
 .section--dark h1,
 .section--dark h2,
@@ -161,7 +160,7 @@ ol {
 .section--dark h4,
 .section--dark h5,
 .section--dark h6 {
-  color: var(--light-text); /* Headings are bright in dark sections */
+  color: var(--light-text);
 }
 
 .highlight {
@@ -169,7 +168,7 @@ ol {
 }
 
 main {
-  display: block; /* Ensure <main> behaves as block */
+  display: block;
 }
 
 /* Typography */
@@ -200,7 +199,6 @@ h3 {
 p {
   margin-bottom: var(--spacing-md);
 }
-/* Remove bottom margin from last element in containers */
 :where(
     .card__text,
     .timeline__details,
@@ -213,14 +211,14 @@ p {
 /* Section Header Styling */
 .section-header {
   text-align: center;
-  margin-bottom: var(--spacing-lg); /* Reduced from xl */
+  margin-bottom: var(--spacing-lg);
 }
 .section-header__subtitle {
   color: var(--orange);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: var(--spacing-xs); /* Reduced space */
+  letter-spacing: 1.5px; /* Slightly reduced */
+  margin-bottom: var(--spacing-xs);
   display: block;
   font-size: 0.9rem;
 }
@@ -228,7 +226,7 @@ p {
   position: relative;
   display: inline-block;
   padding-bottom: 15px;
-  margin-bottom: 0; /* Remove default heading margin */
+  margin-bottom: 0;
 }
 .section-header__title::after {
   content: "";
@@ -245,7 +243,7 @@ p {
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 0.8rem 1.8rem; /* Slightly adjusted padding */
+  padding: 0.8rem 1.8rem;
   border-radius: var(--border-radius-md);
   font-weight: 600;
   text-align: center;
@@ -253,13 +251,12 @@ p {
   transition: var(--transition-medium);
   border: 2px solid transparent;
   font-size: 0.95rem;
-  line-height: 1.5; /* Ensure consistent height */
-  white-space: nowrap; /* Prevent wrapping */
+  line-height: 1.5;
+  white-space: nowrap;
 }
 .btn i {
-  /* Style icons in buttons */
   margin-right: var(--spacing-xs);
-  vertical-align: middle; /* Align icon nicely */
+  vertical-align: middle;
 }
 
 .btn--primary {
@@ -273,12 +270,11 @@ p {
   border-color: var(--orange-light);
   transform: translateY(-3px);
   box-shadow: var(--box-shadow-md);
-  color: var(--white); /* Ensure text remains white */
+  color: var(--white);
 }
 
 .btn--secondary {
   background-color: transparent;
-  /* Dynamically set color/border based on section theme */
   color: var(--dark-text);
   border-color: var(--dark-text);
 }
@@ -289,7 +285,6 @@ p {
   transform: translateY(-3px);
   box-shadow: var(--box-shadow-md);
 }
-/* Secondary button in dark sections */
 .section--dark .btn--secondary {
   color: var(--light-text);
   border-color: var(--light-text);
@@ -306,7 +301,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(236, 234, 222, 0.9); /* var(--cream) with alpha */
+  background-color: rgba(236, 234, 222, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
@@ -317,7 +312,6 @@ p {
     box-shadow var(--transition-medium);
 }
 .navbar.scrolled {
-  /* Class added by JS */
   height: var(--navbar-height-scrolled);
   box-shadow: var(--box-shadow-md);
 }
@@ -337,11 +331,11 @@ p {
 .navbar__logo a {
   display: block;
   color: var(--dark-text);
-  padding: var(--spacing-xs) 0; /* Clickable area */
+  padding: var(--spacing-xs) 0;
 }
 .navbar__logo a:hover,
 .navbar__logo a:focus-visible {
-  color: var(--dark-text); /* Prevent color change */
+  color: var(--dark-text);
 }
 
 .navbar__links {
@@ -370,36 +364,36 @@ p {
   width: 100%;
 }
 .navbar__links a.active {
-  color: var(--orange); /* Highlight active link */
+  color: var(--orange);
 }
 
-/* Contact Button in Nav */
-.navbar__contact-btn {
+/* Contact Button in Nav - Removed !important */
+.navbar__links a.navbar__contact-btn {
   background-color: var(--orange);
-  color: var(--white) !important; /* Override link color */
-  padding: 0.5rem 1.2rem !important; /* Adjust padding */
+  color: var(--white); /* Overrides general link color via specificity */
+  padding: 0.5rem 1.2rem; /* Overrides general link padding via specificity */
   border-radius: var(--border-radius-md);
   font-weight: 500;
 }
-.navbar__contact-btn:hover,
-.navbar__contact-btn:focus-visible {
+.navbar__links a.navbar__contact-btn:hover,
+.navbar__links a.navbar__contact-btn:focus-visible {
   background-color: var(--orange-light);
-  color: var(--white) !important;
+  color: var(--white);
   transform: translateY(-2px);
 }
-.navbar__contact-btn::after {
-  display: none;
-} /* Remove underline effect */
+.navbar__links a.navbar__contact-btn::after {
+  display: none; /* Remove underline effect from general link style */
+}
 
 /* Hamburger Menu */
 .navbar__hamburger {
-  display: none; /* Hidden by default */
+  display: none;
   cursor: pointer;
   background: none;
   border: none;
   padding: 0.5rem;
-  z-index: 1001; /* Above nav links when open */
-  position: relative; /* Needed for z-index */
+  z-index: 1001;
+  position: relative;
 }
 .navbar__hamburger-bar {
   display: block;
@@ -410,7 +404,6 @@ p {
   transition: var(--transition-medium);
   border-radius: 2px;
 }
-/* Hamburger animation */
 .navbar__hamburger[aria-expanded="true"] .navbar__hamburger-bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -425,9 +418,7 @@ p {
 /* Hero Section */
 .hero {
   min-height: 100vh;
-  padding-top: calc(
-    var(--navbar-height) + var(--spacing-md)
-  ); /* Space below fixed navbar */
+  padding-top: calc(var(--navbar-height) + var(--spacing-md));
   padding-bottom: var(--spacing-lg);
   display: flex;
   align-items: center;
@@ -449,7 +440,7 @@ p {
   max-width: 550px;
 }
 .hero__title {
-  color: var(--dark-text); /* Explicit color */
+  color: var(--dark-text);
 }
 .hero__subtitle {
   font-size: 1.15rem;
@@ -525,7 +516,8 @@ p {
 /* Scroll Indicator */
 .hero__scroll-indicator {
   position: absolute;
-  bottom: -10rem; /* Closer to bottom edge */
+  /* --- ADJUSTED POSITION --- */
+  bottom: var(--spacing-lg); /* Positioned within the viewport */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -539,8 +531,9 @@ p {
   transition: opacity var(--transition-medium);
 }
 .hero__scroll-indicator.hidden {
-  opacity: 0; /* Hide when scrolled */
+  opacity: 0;
 }
+/* Bounce animation uses translateX(-50%) in keyframes too to maintain centering */
 @keyframes bounce {
   0%,
   20%,
@@ -565,7 +558,7 @@ p {
   align-items: start;
 }
 .about__highlight-text {
-  color: var(--light-text); /* Theme handled by section--dark */
+  color: var(--light-text);
   border-left: 4px solid var(--orange);
   padding-left: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
@@ -588,7 +581,7 @@ p {
 }
 .about__stat-text {
   font-size: 0.9rem;
-  color: var(--light-text-muted); /* Theme handled by section--dark */
+  color: var(--light-text-muted);
   margin-top: var(--spacing-xs);
 }
 .about__cards {
@@ -597,14 +590,14 @@ p {
   gap: var(--spacing-md);
 }
 
-/* Generic Card Style (Used in About, can be reused) */
+/* Generic Card Style */
 .card {
   padding: var(--spacing-md);
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow-sm);
   transition: transform var(--transition-medium),
     box-shadow var(--transition-medium), border-color var(--transition-medium);
-  border: 1px solid transparent; /* Base border */
+  border: 1px solid transparent;
 }
 .card:hover {
   transform: translateY(-5px);
@@ -625,16 +618,13 @@ p {
   margin-bottom: 0;
   line-height: 1.6;
 }
-/* Card Theme Adjustment */
 .section--dark .card {
   background-color: var(--dark-light);
   border-color: rgba(255, 255, 255, 0.1);
 }
 .section--dark .card:hover {
-  border-color: rgba(255, 113, 67, 0.5); /* Orange border on hover */
+  border-color: rgba(255, 113, 67, 0.5);
 }
-/* Light theme card adjustment if needed */
-/* .section--light .card { background-color: var(--white); } */
 
 /* Skills Section */
 .skills__content {
@@ -701,7 +691,7 @@ p {
   gap: var(--spacing-lg);
 }
 .project-card {
-  background-color: var(--dark-light); /* Theme handled by section--dark */
+  background-color: var(--dark-light);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--box-shadow-md);
@@ -709,7 +699,7 @@ p {
     box-shadow var(--transition-medium);
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for dark */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .project-card:hover {
   transform: translateY(-10px);
@@ -719,7 +709,7 @@ p {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background-color: var(--dark-light); /* Placeholder bg */
+  background-color: var(--dark-light);
 }
 .project-card__img img {
   width: 100%;
@@ -738,7 +728,7 @@ p {
 }
 .project-card__title {
   font-size: 1.3rem;
-  margin-bottom: var(--spacing-sm); /* Increased space */
+  margin-bottom: var(--spacing-sm);
 }
 .project-card__description {
   margin-bottom: var(--spacing-md);
@@ -747,9 +737,8 @@ p {
   line-height: 1.6;
 }
 .project-card__description strong {
-  /* Highlight Goal/Solution etc */
   font-weight: 600;
-  color: var(--light-text); /* Brighter than muted */
+  color: var(--light-text);
 }
 .project-card__tags {
   display: flex;
@@ -757,9 +746,10 @@ p {
   gap: 8px;
   margin-bottom: var(--spacing-md);
 }
+/* --- IMPROVED CONTRAST FOR TAGS --- */
 .project-card__tags span {
-  background-color: rgba(255, 113, 67, 0.15);
-  color: var(--orange);
+  background-color: var(--orange);
+  color: var(--white);
   padding: 5px 12px;
   border-radius: var(--border-radius-sm);
   font-size: 0.7rem;
@@ -770,7 +760,7 @@ p {
 .project-card__links {
   display: flex;
   gap: var(--spacing-md);
-  margin-top: auto; /* Push links to bottom */
+  margin-top: auto;
 }
 .project-card__link {
   color: var(--light-text);
@@ -813,7 +803,6 @@ p {
   padding: var(--spacing-md) 0;
 }
 .timeline::before {
-  /* The vertical line */
   content: "";
   position: absolute;
   top: 0;
@@ -835,8 +824,7 @@ p {
 .timeline__dot {
   width: 20px;
   height: 20px;
-  /* Use section background for dot fill */
-  background-color: var(--cream); /* Default light */
+  background-color: var(--cream);
   border: 4px solid var(--orange);
   border-radius: 50%;
   position: absolute;
@@ -846,14 +834,13 @@ p {
   z-index: 2;
 }
 .section--dark .timeline__dot {
-  /* Adjust if timeline is on dark */
   background-color: var(--dark);
 }
 .timeline__date {
   position: relative;
   top: 0;
-  margin-bottom: var(--spacing-sm); /* Increased space */
-  display: inline-block; /* Allows background */
+  margin-bottom: var(--spacing-sm);
+  display: inline-block;
   background-color: var(--orange);
   color: white;
   padding: 6px 14px;
@@ -870,7 +857,6 @@ p {
   border: 1px solid var(--gray-light);
 }
 .timeline__content::before {
-  /* Arrow */
   content: "";
   position: absolute;
   top: 15px;
@@ -884,7 +870,7 @@ p {
 .timeline__title {
   margin-bottom: 2px;
   font-size: 1.2rem;
-  color: var(--dark-text); /* Ensure color on white card */
+  color: var(--dark-text);
 }
 .timeline__company {
   color: var(--orange);
@@ -899,7 +885,7 @@ p {
   margin-left: 5px;
 }
 .timeline__details {
-  padding-left: 0; /* Remove default ul padding */
+  padding-left: 0;
   list-style: none;
 }
 .timeline__details li {
@@ -927,7 +913,7 @@ p {
   gap: var(--spacing-lg);
 }
 .education-card {
-  background-color: var(--dark-light); /* Theme handled by section--dark */
+  background-color: var(--dark-light);
   padding: var(--spacing-lg);
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow-md);
@@ -962,7 +948,7 @@ p {
 }
 .education-card__year,
 .education-card__detail {
-  color: var(--light-text-muted); /* Theme handled */
+  color: var(--light-text-muted);
   font-size: 0.9rem;
   margin-bottom: 8px;
 }
@@ -1015,7 +1001,7 @@ p {
 .contact__item a {
   color: var(--dark-text);
   font-weight: 500;
-  word-break: break-word; /* Prevent long emails/links overflow */
+  word-break: break-word;
 }
 .contact__item a:hover,
 .contact__item a:focus-visible {
@@ -1042,7 +1028,7 @@ p {
 .contact__social-link:focus-visible {
   background-color: var(--orange);
   transform: translateY(-5px) scale(1.1);
-  color: var(--white); /* Ensure color stays white */
+  color: var(--white);
 }
 
 /* Contact Form */
@@ -1054,7 +1040,7 @@ p {
 }
 .form-group {
   margin-bottom: var(--spacing-md);
-  position: relative; /* For error message positioning */
+  position: relative;
 }
 .form-group__label {
   display: block;
@@ -1075,35 +1061,32 @@ p {
   font-size: 1rem;
   color: var(--dark-text);
 }
-/* Remove default browser validation styles (if using JS validation) */
-.form-group__input:invalid,
+.form-group__input:invalid, /* For native validation if JS fails */
 .form-group__textarea:invalid {
-  box-shadow: none;
+  box-shadow: none; /* Prevents default browser invalid styles if novalidate isn't fully effective */
 }
 .form-group__input:focus,
 .form-group__textarea:focus {
-  /* Use focus-visible for outline */
   border-color: var(--orange);
   background-color: var(--white);
 }
 .form-group__textarea {
-  resize: vertical; /* Allow vertical resize only */
+  resize: vertical;
   min-height: 120px;
 }
 .form-group__error-message {
   color: var(--error-color);
   font-size: 0.8rem;
   margin-top: 4px;
-  display: block; /* Initially hidden by empty content */
-  min-height: 1em; /* Reserve space */
+  display: block;
+  min-height: 1em;
 }
-/* Style for inputs with errors (add class via JS) */
 .form-group__input.error,
 .form-group__textarea.error {
-  border-color: var(--error-color);
+  border-color: var(--error-color) !important; /* Ensure error border overrides focus */
 }
 .contact__submit-btn {
-  min-width: 150px; /* Give button some base width */
+  min-width: 150px;
 }
 .contact__submit-btn:disabled {
   background-color: var(--gray);
@@ -1113,7 +1096,7 @@ p {
 .contact__form-status {
   margin-top: var(--spacing-md);
   font-weight: 500;
-  min-height: 1.5em; /* Reserve space */
+  min-height: 1.5em;
 }
 .contact__form-status.success {
   color: var(--success-color);
@@ -1124,7 +1107,6 @@ p {
 
 /* Footer */
 .footer {
-  /* Theme handled by section--dark */
   padding: var(--spacing-lg) 0 var(--spacing-md) 0;
 }
 .footer__container {
@@ -1186,16 +1168,15 @@ p {
   align-items: center;
   justify-content: center;
   transition: var(--transition-medium);
-  /* Removed absolute positioning for better flow on small screens */
 }
 .footer__back-to-top:hover,
 .footer__back-to-top:focus-visible {
   background-color: var(--orange-light);
   transform: translateY(-5px);
-  color: var(--white); /* Ensure color stays white */
+  color: var(--white);
 }
 
-/* Scroll Animations (Setup - class added by JS) */
+/* Scroll Animations */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -1207,8 +1188,6 @@ p {
 }
 
 /* --- Media Queries --- */
-
-/* Medium Devices - Tablets */
 @media (max-width: 992px) {
   .container {
     max-width: 720px;
@@ -1244,21 +1223,19 @@ p {
 
   .timeline::before {
     left: 20px;
-  } /* Adjust line/dot position */
+  }
   .timeline__dot {
     left: 20px;
   }
   .timeline__item {
     padding-left: 50px;
-  } /* Reduce padding */
+  }
   .timeline__content::before {
     display: none;
-  } /* Hide arrow */
+  }
 }
 
-/* Small Devices - Mobile */
 @media (max-width: 768px) {
-  /* Adjusted breakpoint */
   html {
     font-size: 95%;
   }
@@ -1266,12 +1243,11 @@ p {
     width: 95%;
   }
 
-  /* Mobile Navigation */
   .navbar__links {
     position: fixed;
     top: 0;
     left: 0;
-    width: min(85%, 320px); /* Use min for max width */
+    width: min(85%, 320px);
     height: 100vh;
     background-color: var(--cream);
     flex-direction: column;
@@ -1279,13 +1255,13 @@ p {
     justify-content: flex-start;
     gap: var(--spacing-sm);
     padding: calc(var(--navbar-height) + var(--spacing-md)) var(--spacing-md)
-      var(--spacing-md); /* Adjust top padding */
+      var(--spacing-md);
     transform: translateX(-100%);
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-      visibility 0s 0.4s; /* Delay visibility change */
+      visibility 0s 0.4s;
     box-shadow: var(--box-shadow-lg);
-    z-index: 999; /* Below hamburger */
-    visibility: hidden; /* Hide accessibility tree */
+    z-index: 999;
+    visibility: hidden;
   }
   .navbar__links.active {
     transform: translateX(0);
@@ -1301,18 +1277,18 @@ p {
     font-size: 1.1rem;
   }
   .navbar__links a::after {
-    display: none;
+    display: none; /* General link underline not needed for mobile stacked items */
   }
-  .navbar__links .navbar__contact-btn {
-    display: inline-block;
-    width: auto;
+  .navbar__links a.navbar__contact-btn { /* Ensure mobile contact button styles correctly */
+    display: inline-block; /* Revert from block to inline-block if it was block */
+    width: auto; /* Revert from full-width if it was */
     margin-top: var(--spacing-md);
+    padding: 0.5rem 1.2rem; /* Re-apply specific padding */
   }
   .navbar__hamburger {
     display: block;
   }
 
-  /* Overlay for closing menu */
   body.mobile-nav-active::after {
     content: "";
     position: fixed;
@@ -1321,19 +1297,19 @@ p {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 998; /* Below nav menu */
+    z-index: 998;
   }
 
   .section-header {
     margin-bottom: var(--spacing-lg);
   }
-  .section-title {
+  .section-header__title { /* Renamed from section-title to be consistent */
     font-size: clamp(1.8rem, 7vw, 2.2rem);
   }
 
   .skills__content {
     grid-template-columns: 1fr;
-  } /* Stack skill categories */
+  }
   .about__cards,
   .skills__grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -1355,13 +1331,11 @@ p {
     gap: var(--spacing-sm);
   }
   .footer__back-to-top {
-    /* Reset absolute positioning */
     position: static;
     margin-top: var(--spacing-md);
   }
 }
 
-/* Extra Small Devices */
 @media (max-width: 480px) {
   html {
     font-size: 90%;
